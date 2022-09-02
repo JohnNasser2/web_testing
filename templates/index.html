@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<title>{{ title }}</title>
+<!-- Lebsy Shopping Tool -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/images/admin2.png">
+</head>
+
+<body>
+    <header>
+        <div class="beta"
+            style="background-color: rgba(0, 153, 153, 0.7); border:1px solid whitesmoke; border-radius:50px; width:75px; height: 35px;color: white;">
+            Beta</div>
+        <div class="logoStyle">
+            <h2>أدوات لبسي</h2>
+            <img src="/static/images/admin2.png" class="logo" alt="logo" width="70" height="70">
+        </div>
+    </header>
+    <div class="all">
+        <div class="img"><img class="showImage" src={{staticImage}} width="100%" height="110%"
+                style="border-radius: 5px; background-size: cover;"></div>
+        <div class="all-btns">
+
+            <!-- Rotate to left   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+
+
+            <form method="post" enctype="multipart/form-data" name="john">
+                <button name="leftRotate" value={{staticImage}} onclick="loadingFun()"><img
+                        src="/static/images/rotate-left.png" alt="alt" width="35" height="30vh"></button>
+                </p>
+            </form>
+
+            <!-- Download Image -->
+            <a href={{staticImage}} download>
+                <button name="download" value={{staticImage}} class="btn1" downloadBtn><img
+                        src="/static/images/downloads.png" alt="alt" data-="ji" width="35" height="30vh" download="">
+                </button>
+            </a>
+
+            <!-- Rotate to Right        >>>>>>>>>>>>>>>>>>>>>>>> -->
+
+            <form method="post" enctype="multipart/form-data" name="john">
+                <button name="rightRotate" value={{staticImage}} onclick="loadingFun()"><img
+                        src="/static/images/rotate-right.png" alt="alt" width="35" height="30vh"></button>
+                </p>
+            </form>
+        </div>
+        <form method="post" class="getFileForm" style="display: flex;" enctype="multipart/form-data">
+            <p><input type="file" id="file" style="margin-top: 200px;" name="crop" value="Enter" class="file"></p>
+            <p class="getImageButton"><input type="submit" id="submit" value="Enter" class="subButton"
+                    onclick="checkImagesLen()"></p>
+
+            <label for="submit" style="margin: 100px 10px 40px 0;width: 20; font-weight: bold;" name="kk"
+                class="sendImage">
+                <span class="material-icons" style="background-color: transparent;margin-right: 5px;">
+                    upload
+                </span>
+                رفع
+
+            </label>
+            <label for="file" style="margin: auto 0 40px 0;width: 20; font-weight: bold;" name="kk">
+                <span class="material-icons" style="background-color: transparent;margin-right: 5px;">
+                    add_photo_alternate
+                </span>
+                اختر صورة
+            </label>
+        </form>
+        <p class="developerInfo">
+            Made By Lebsy Developer
+            <span style="color:red; font-size: 12px;background-color: transparent;height: 50;margin-top: 20;">
+                John Nasser
+            </span>
+        </p>
+        <!-- {% if loading == "notLoading" %}
+        <div></div>
+        {% else %}
+        <div class="loader"></div>
+        {% endif %} -->
+        <!-- {% if loading == "yas" %}
+        <div class="loader"></div>
+        {% endif %} -->
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var at = document.querySelector(".file");
+    function checkImagesLen() {
+        if (at.files.length == 0) {
+            alert("اختر منتج اولاً ثم قم بالرفع");
+        } else {
+            loadingFun();
+
+        }
+
+    }
+    function loadingFun() {
+        alert("برجاء الانتظار");
+    }
+</script>
