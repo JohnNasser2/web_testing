@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "public": "app.py",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "server/src/templates/index.html"
+      }
+    ],
+    "functions": {
+      "predeploy": [
+        "npm --prefix /server/src run build"
+      ]
+    }
+  }
+}

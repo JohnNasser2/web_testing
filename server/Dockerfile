@@ -5,6 +5,7 @@ FROM python:3.7
 # Allow statements and log messages to immediately appear in the Knative logs
 # Install production dependencies.
 RUN pip install Flask gunicorn
+FROM gcr.io/cloud-builders/docker
 
 # Copy local code to the container image.
 WORKDIR /app
